@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="th"><head>
+<!DOCTYPE html>
+<html lang="th">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MTCost Waiting for the invoice.</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f6f2;--surface:#fff;--surface2:#f0ede8;--border:#e0dbd2;--border2:#c8c2b8;--accent:#d97706;--accent-bg:#fef3c7;--accent-text:#92400e;--text:#1c1917;--text2:#57534e;--text3:#a8a29e;--green:#15803d;--green-bg:#dcfce7;--blue:#1d4ed8;--blue-bg:#dbeafe;--red:#b91c1c;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -160,7 +162,7 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
     <div class="sb-lbl">ภาพรวม</div>
     <button class="ubtn active" id="btn-ALL" onclick="selectUser('ALL')">
       <div class="uav" style="background:#f0e6d3;color:#92400e;">ALL</div>
-      <div style="flex:1;min-width:0;"><div class="uname">ทุกคน</div><div class="utot" id="sb-total">฿ 12,580,390</div></div>
+      <div style="flex:1;min-width:0;"><div class="uname">ทุกคน</div><div class="utot" id="sb-total">กำลังโหลด...</div></div>
     </button>
   </div>
   <div class="sb-sec">
@@ -183,7 +185,7 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
       <div><h2 id="main-title">ภาพรวม MAINTENANCE COST</h2><p id="main-sub">MT Cost — Material Group 900003</p></div>
       <div class="fb">
         <select id="filter-year" onchange="applyFilters()">
-          <option value="ALL">ทุกปี</option><option value="2025">2025</option><option value="2026" selected="">2026</option>
+          <option value="ALL">ทุกปี</option><option value="2025">2025</option><option value="2026" selected>2026</option>
         </select>
         <button class="btn btn-a" onclick="exportCSV()">Export CSV</button>
         <button class="btn" onclick="downloadApp()">⬇ โหลด App</button>
@@ -191,9 +193,9 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
     </div>
 
     <div class="sync-mini">
-      <div class="sdot syncing" id="sdot"></div>
-      <span id="slabel">กำลังโหลดข้อมูล PO...</span>
-      <span id="user-display" style="margin-left: 8px; font-size: 11px; font-weight: 600; color: var(--accent-text); background: var(--accent-bg); padding: 2px 10px; border-radius: 20px; cursor: pointer;" onclick="openSettings()" title="คลิกเพื่อเปลี่ยนชื่อ">👤 PATTARAPONG</span>
+      <div class="sdot" id="sdot"></div>
+      <span id="slabel">ยังไม่ได้เชื่อมต่อ</span>
+      <span id="user-display" style="margin-left:8px;font-size:11px;font-weight:600;color:var(--accent-text);background:var(--accent-bg);padding:2px 10px;border-radius:20px;display:none;cursor:pointer;" onclick="openSettings()" title="คลิกเพื่อเปลี่ยนชื่อ"></span>
       <button class="btn" style="margin-left:auto;padding:4px 10px;font-size:11px;" onclick="syncFromSheet()">↻ ซิงค์</button>
     </div>
 
@@ -215,14 +217,14 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
       </div>
     </div>
 
-    <div id="content-area"><div style="text-align:center;padding:48px;color:var(--text3);">⏳ กำลังโหลดข้อมูลจาก Google Sheet...</div></div>
+    <div id="content-area"></div>
   </div>
 
   <div id="view-dashboard" style="display:none;">
     <div class="ph">
       <div><h2>Dashboard — ยอดวางบิลที่ยืนยันแล้ว</h2><p>เจ้าของงาน × เดือน/สัปดาห์</p></div>
       <div class="fb">
-        <select id="dash-year" onchange="renderDashboard()"><option value="2025">2025</option><option value="2026" selected="">2026</option></select>
+        <select id="dash-year" onchange="renderDashboard()"><option value="2025">2025</option><option value="2026" selected>2026</option></select>
         <button class="btn btn-a" onclick="exportDashCSV()">Export CSV</button>
       </div>
     </div>
@@ -298,6 +300,10 @@ function bwk(sel=''){return['<option value="">W</option>',...[1,2,3,4].map(w=>`<
 
 function buildSidebar(){
   const tot={};RAW.forEach(d=>{tot[d.user]=(tot[d.user]||0)+d.price;});
+  // อัปเดตยอดรวมทุกคนใน sidebar
+  const allTotal=RAW.reduce((s,d)=>s+d.price,0);
+  const sbTotal=document.getElementById('sb-total');
+  if(sbTotal) sbTotal.textContent=fk(allTotal);
   document.getElementById('user-list').innerHTML=Object.entries(tot).sort((a,b)=>b[1]-a[1]).map(([u,t])=>{
     const[bg,fg]=UC[u]||['#eee','#333'];
     return`<button class="ubtn" id="btn-${u}" onclick="selectUser('${u}')"><div class="uav" style="background:${bg};color:${fg};">${u.substring(0,2).toUpperCase()}</div><div style="flex:1;min-width:0;"><div class="uname">${u}</div><div class="utot">${fk(t)}</div></div></button>`;
@@ -697,5 +703,5 @@ function init(){
 }
 init();
 </script>
-
-</body></html>
+</body>
+</html>
