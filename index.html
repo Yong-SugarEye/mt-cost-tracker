@@ -165,7 +165,7 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
   </div>
   <div class="sb-sec">
     <div class="sb-lbl">ผู้รับผิดชอบ</div>
-    <div id="user-list"><button class="ubtn" id="btn-SOMCHAI" onclick="selectUser('SOMCHAI')"><div class="uav" style="background:#fffbeb;color:#92400e;">SO</div><div style="flex:1;min-width:0;"><div class="uname">SOMCHAI</div><div class="utot">฿2.81M</div></div></button><button class="ubtn" id="btn-PATTARAPONG" onclick="selectUser('PATTARAPONG')"><div class="uav" style="background:#fce7f3;color:#9d174d;">PA</div><div style="flex:1;min-width:0;"><div class="uname">PATTARAPONG</div><div class="utot">฿2.55M</div></div></button><button class="ubtn" id="btn-RUCHAGON" onclick="selectUser('RUCHAGON')"><div class="uav" style="background:#f7fee7;color:#3f6212;">RU</div><div style="flex:1;min-width:0;"><div class="uname">RUCHAGON</div><div class="utot">฿1.49M</div></div></button><button class="ubtn" id="btn-TEERASAK" onclick="selectUser('TEERASAK')"><div class="uav" style="background:#e0f2fe;color:#075985;">TE</div><div style="flex:1;min-width:0;"><div class="uname">TEERASAK</div><div class="utot">฿1.32M</div></div></button><button class="ubtn" id="btn-SUMET" onclick="selectUser('SUMET')"><div class="uav" style="background:#f1f5f9;color:#334155;">SU</div><div style="flex:1;min-width:0;"><div class="uname">SUMET</div><div class="utot">฿848K</div></div></button><button class="ubtn" id="btn-ATTAPOL" onclick="selectUser('ATTAPOL')"><div class="uav" style="background:#dbeafe;color:#1d4ed8;">AT</div><div style="flex:1;min-width:0;"><div class="uname">ATTAPOL</div><div class="utot">฿763K</div></div></button><button class="ubtn" id="btn-ARNUN" onclick="selectUser('ARNUN')"><div class="uav" style="background:#fef3c7;color:#92400e;">AR</div><div style="flex:1;min-width:0;"><div class="uname">ARNUN</div><div class="utot">฿729K</div></div></button><button class="ubtn" id="btn-Songsak" onclick="selectUser('Songsak')"><div class="uav" style="background:#ecfdf5;color:#065f46;">SO</div><div style="flex:1;min-width:0;"><div class="uname">Songsak</div><div class="utot">฿639K</div></div></button><button class="ubtn" id="btn-anon" onclick="selectUser('anon')"><div class="uav" style="background:#f0fdf4;color:#14532d;">AN</div><div style="flex:1;min-width:0;"><div class="uname">anon</div><div class="utot">฿614K</div></div></button><button class="ubtn" id="btn-PATOMCHAI" onclick="selectUser('PATOMCHAI')"><div class="uav" style="background:#f0f9ff;color:#0369a1;">PA</div><div style="flex:1;min-width:0;"><div class="uname">PATOMCHAI</div><div class="utot">฿322K</div></div></button><button class="ubtn" id="btn-Supachai" onclick="selectUser('Supachai')"><div class="uav" style="background:#faf5ff;color:#581c87;">SU</div><div style="flex:1;min-width:0;"><div class="uname">Supachai</div><div class="utot">฿199K</div></div></button><button class="ubtn" id="btn-NITISAK" onclick="selectUser('NITISAK')"><div class="uav" style="background:#fff7ed;color:#c2410c;">NI</div><div style="flex:1;min-width:0;"><div class="uname">NITISAK</div><div class="utot">฿180K</div></div></button><button class="ubtn" id="btn-NANTA" onclick="selectUser('NANTA')"><div class="uav" style="background:#fdf4ff;color:#7e22ce;">NA</div><div style="flex:1;min-width:0;"><div class="uname">NANTA</div><div class="utot">฿58K</div></div></button><button class="ubtn" id="btn-ATTHAPONG" onclick="selectUser('ATTHAPONG')"><div class="uav" style="background:#dcfce7;color:#15803d;">AT</div><div style="flex:1;min-width:0;"><div class="uname">ATTHAPONG</div><div class="utot">฿20K</div></div></button><button class="ubtn" id="btn-JIRADECH" onclick="selectUser('JIRADECH')"><div class="uav" style="background:#ede9fe;color:#6d28d9;">JI</div><div style="flex:1;min-width:0;"><div class="uname">JIRADECH</div><div class="utot">฿17K</div></div></button><button class="ubtn" id="btn-KOMKRICH" onclick="selectUser('KOMKRICH')"><div class="uav" style="background:#f0fdf4;color:#166534;">KO</div><div style="flex:1;min-width:0;"><div class="uname">KOMKRICH</div><div class="utot">฿12K</div></div></button><button class="ubtn" id="btn-KITTISAK" onclick="selectUser('KITTISAK')"><div class="uav" style="background:#fee2e2;color:#b91c1c;">KI</div><div style="flex:1;min-width:0;"><div class="uname">KITTISAK</div><div class="utot">฿7K</div></div></button></div>
+    <div id="user-list"></div>
   </div>
   <div class="sb-settings">
     <button class="settings-btn" onclick="openSettings()">⚙️ ตั้งค่าการเชื่อมต่อ</button>
@@ -191,8 +191,8 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
     </div>
 
     <div class="sync-mini">
-      <div class="sdot ok" id="sdot"></div>
-      <span id="slabel">โหลดแล้ว · 574 รายการ · 11:03:16</span>
+      <div class="sdot syncing" id="sdot"></div>
+      <span id="slabel">กำลังโหลดข้อมูล PO...</span>
       <span id="user-display" style="margin-left: 8px; font-size: 11px; font-weight: 600; color: var(--accent-text); background: var(--accent-bg); padding: 2px 10px; border-radius: 20px; cursor: pointer;" onclick="openSettings()" title="คลิกเพื่อเปลี่ยนชื่อ">👤 PATTARAPONG</span>
       <button class="btn" style="margin-left:auto;padding:4px 10px;font-size:11px;" onclick="syncFromSheet()">↻ ซิงค์</button>
     </div>
@@ -200,13 +200,13 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
     <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);">
       <div class="kc accent">
         <div class="kc-lbl">ยอดรวมทุกคน</div>
-        <div class="kc-val" id="kpi-all-total">฿ 11,377,590</div>
-        <div class="kc-sub" id="kpi-all-sub">114 PO ทั้งหมด</div>
+        <div class="kc-val" id="kpi-all-total">฿ 11,370,217</div>
+        <div class="kc-sub" id="kpi-all-sub">574 PO ทั้งหมด</div>
       </div>
       <div class="kc blue">
         <div class="kc-lbl">ยอดรอวางบิล</div>
-        <div class="kc-val" id="kpi-pending-po">฿ 11,377,590</div>
-        <div class="kc-sub" id="kpi-pending-amt">114 PO รอจ่าย</div>
+        <div class="kc-val" id="kpi-pending-po">฿ 0</div>
+        <div class="kc-sub" id="kpi-pending-amt">0 PO รอจ่าย</div>
       </div>
       <div class="kc green">
         <div class="kc-lbl">ยืนยันวางบิลแล้ว</div>
@@ -215,169 +215,7 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
       </div>
     </div>
 
-    <div id="content-area"><div class="sh"><span class="sh-title">สรุปยอดรายคน × เดือน</span><span style="font-size:12px;color:var(--text3);">คลิกชื่อเพื่อดูรายละเอียด</span></div>
-  <div class="dash-wrap"><table class="dtbl">
-  <thead>
-    <tr>
-      <th class="ucol">เจ้าของงาน</th>
-      <th>JAN<br><span style="font-size:9px;font-weight:400;">2026</span></th><th>FEB<br><span style="font-size:9px;font-weight:400;">2026</span></th><th>MAR<br><span style="font-size:9px;font-weight:400;">2026</span></th><th>APR<br><span style="font-size:9px;font-weight:400;">2026</span></th>
-      <th>รวม</th>
-    </tr>
-  </thead>
-  <tbody><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#fffbeb;color:#92400e;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">SO</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('SOMCHAI')">SOMCHAI</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿385K'">฿385K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿444K'">฿444K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿1.81M'">฿1.81M</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿2.64M</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#fce7f3;color:#9d174d;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">PA</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('PATTARAPONG')">PATTARAPONG</span>
-        </div>
-      </td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿1.78M'">฿1.78M</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿43K'">฿43K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿538K'">฿538K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿2.36M</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#f7fee7;color:#3f6212;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">RU</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('RUCHAGON')">RUCHAGON</span>
-        </div>
-      </td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿126K'">฿126K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿792K'">฿792K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿320K'">฿320K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿186K'">฿186K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿1.42M</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#e0f2fe;color:#075985;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">TE</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('TEERASAK')">TEERASAK</span>
-        </div>
-      </td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿14K'">฿14K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿111K'">฿111K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿625K'">฿625K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿385K'">฿385K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿1.14M</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#f1f5f9;color:#334155;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">SU</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('SUMET')">SUMET</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿83K'">฿83K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿534K'">฿534K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿231K'">฿231K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿848K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">AT</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('ATTAPOL')">ATTAPOL</span>
-        </div>
-      </td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿315K'">฿315K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿369K'">฿369K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿31K'">฿31K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿18K'">฿18K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿733K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#fef3c7;color:#92400e;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">AR</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('ARNUN')">ARNUN</span>
-        </div>
-      </td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿192K'">฿192K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿176K'">฿176K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿235K'">฿235K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿108K'">฿108K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿710K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#f0fdf4;color:#14532d;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">AN</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('anon')">anon</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿539K'">฿539K</td><td class="ev">—</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿539K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#ecfdf5;color:#065f46;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">SO</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('Songsak')">Songsak</span>
-        </div>
-      </td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿50K'">฿50K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿439K'">฿439K</td><td class="ev">—</td><td class="ev">—</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿489K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#faf5ff;color:#581c87;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">SU</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('Supachai')">Supachai</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿199K'">฿199K</td><td class="ev">—</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿199K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#fff7ed;color:#c2410c;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">NI</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('NITISAK')">NITISAK</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿180K'">฿180K</td><td class="ev">—</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿180K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#fdf4ff;color:#7e22ce;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">NA</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('NANTA')">NANTA</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿8K'">฿8K</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿51K'">฿51K</td><td class="ev">—</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿58K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#dcfce7;color:#15803d;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">AT</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('ATTHAPONG')">ATTHAPONG</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿20K'">฿20K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿20K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">JI</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('JIRADECH')">JIRADECH</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿17K'">฿17K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿17K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#f0fdf4;color:#166534;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">KO</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('KOMKRICH')">KOMKRICH</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿12K'">฿12K</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿12K</td>
-    </tr><tr>
-      <td class="utd">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:20px;height:20px;border-radius:50%;background:#fee2e2;color:#b91c1c;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;">KI</div>
-          <span style="cursor:pointer;font-size:12px;font-weight:500;text-decoration:underline dotted;" onclick="selectUser('KITTISAK')">KITTISAK</span>
-        </div>
-      </td>
-      <td class="ev">—</td><td class="ev">—</td><td style="font-family:'IBM Plex Mono',monospace;font-size:11px;" title="'฿7K'">฿7K</td><td class="ev">—</td>
-      <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface2);">฿7K</td>
-    </tr><tr class="trow">
-    <td class="utd" style="font-weight:700;background:var(--surface2);">รวมทั้งหมด</td>
-    <td class="hv">฿2.48M</td><td class="hv">฿2.36M</td><td class="hv">฿3.21M</td><td class="hv">฿3.33M</td>
-    <td style="font-weight:700;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent-text);background:var(--accent-bg);">฿11.38M</td>
-  </tr></tbody></table></div>
-  <div style="font-size:11px;color:var(--text3);margin-top:4px;">
-    <span style="display:inline-flex;align-items:center;gap:4px;margin-right:12px;"><span style="width:10px;height:10px;background:#dcfce7;border-radius:2px;display:inline-block;"></span>ยืนยันวางบิลครบ</span>
-    <span style="display:inline-flex;align-items:center;gap:4px;margin-right:12px;"><span style="width:10px;height:10px;background:#fef9c3;border-radius:2px;display:inline-block;"></span>ยืนยันบางส่วน</span>
-    <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:var(--surface);border:1px solid var(--border);border-radius:2px;display:inline-block;"></span>รอวางบิล</span>
-  </div></div>
+    <div id="content-area"><div style="text-align:center;padding:48px;color:var(--text3);">⏳ กำลังโหลดข้อมูลจาก Google Sheet...</div></div>
   </div>
 
   <div id="view-dashboard" style="display:none;">
@@ -400,18 +238,26 @@ tr.confirmed td{background:#f0fdf4!important;opacity:.75;}
 <!-- Settings Modal -->
 <div class="modal-overlay" id="settings-modal" style="display:none;" onclick="closeSettings(event)">
   <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-title">⚙️ ตั้งค่าการเชื่อมต่อ</div>
-    <div class="modal-sub">ตั้งค่าครั้งเดียว ระบบจะจำไว้ใน browser</div>
-    <div class="modal-label">Google Apps Script URL</div>
-    <input type="text" class="modal-input" id="script-url-input" placeholder="https://script.google.com/macros/s/.../exec">
+    <div class="modal-title">👤 กรอกชื่อของคุณ</div>
+    <div class="modal-sub">ชื่อนี้จะบันทึกทุกครั้งที่มีการยืนยันวางบิล</div>
     <div class="modal-label">ชื่อของคุณ</div>
-    <input type="text" class="modal-input" id="username-input" placeholder="เช่น SOMCHAI" oninput="onUserChange()" style="text-transform:uppercase;">
+    <input type="text" class="modal-input" id="username-input" placeholder="เช่น SOMCHAI" oninput="onUserChange()" style="text-transform:uppercase;font-size:15px;padding:10px;">
     <div class="modal-row">
-      <button class="btn btn-a" onclick="connectSheet()">เชื่อมต่อ</button>
-      <button class="btn" onclick="testConn()">ทดสอบ</button>
-      <button class="btn" onclick="closeSettings()" style="margin-left:auto;">ปิด</button>
+      <button class="btn btn-a" onclick="saveAndClose()" style="flex:1;">บันทึกและปิด</button>
     </div>
     <div id="modal-status" style="margin-top:10px;font-size:12px;color:var(--text3);"></div>
+    <!-- Admin only -->
+    <details style="margin-top:16px;border-top:1px solid var(--border);padding-top:12px;">
+      <summary style="font-size:11px;color:var(--text3);cursor:pointer;">⚙️ ตั้งค่าขั้นสูง (Admin)</summary>
+      <div style="margin-top:10px;">
+        <div class="modal-label">Google Apps Script URL</div>
+        <input type="text" class="modal-input" id="script-url-input" placeholder="https://script.google.com/macros/s/.../exec">
+        <div class="modal-row">
+          <button class="btn" onclick="connectSheet()">เชื่อมต่อ</button>
+          <button class="btn" onclick="testConn()">ทดสอบ</button>
+        </div>
+      </div>
+    </details>
   </div>
 </div>
 
@@ -426,7 +272,7 @@ const UC={};[...new Set(RAW.map(d=>d.user))].sort().forEach((u,i)=>{UC[u]=CL[i%C
 const NOW=new Date(),NY=NOW.getFullYear(),NM=NOW.getMonth()+1;
 const NMV=`${NY}-${String(NM).padStart(2,'0')}`;
 let STORE=JSON.parse(localStorage.getItem('mt_v6')||'{}');
-let SURL=localStorage.getItem('mt_url')||'';
+let SURL=localStorage.getItem('mt_url')||'https://script.google.com/macros/s/AKfycbw_3QvxRiGPD150Vrn5MhIKbTgAQoS-n5cyk1U5MxA1obnZfY2RzbXNyCzfpDachFCF6g/exec';
 let CU=localStorage.getItem('mt_user')||'';
 let SU='ALL',UT='pending',MT='overview';
 const ss=()=>localStorage.setItem('mt_v6',JSON.stringify(STORE));
@@ -741,10 +587,19 @@ function downloadApp(){const h=document.documentElement.outerHTML;const blob=new
 function toast(msg,type='ok'){const t=document.getElementById('toast');t.textContent=msg;t.className=`toast ${type} show`;setTimeout(()=>t.classList.remove('show'),2200);}
 
 // Settings modal
+function saveAndClose(){
+  const v=document.getElementById('username-input').value.trim().toUpperCase();
+  if(!v){document.getElementById('modal-status').textContent='⚠️ กรุณากรอกชื่อก่อนครับ';return;}
+  CU=v;localStorage.setItem('mt_user',v);
+  updateUserDisplay();
+  closeSettings();
+  toast('บันทึกชื่อ '+v+' แล้วครับ','ok');
+}
 function openSettings(){
   document.getElementById('settings-modal').style.display='flex';
   document.getElementById('script-url-input').value=SURL;
   document.getElementById('username-input').value=CU;
+  document.getElementById('modal-status').textContent='';
 }
 function closeSettings(e){if(!e||e.target===document.getElementById('settings-modal'))document.getElementById('settings-modal').style.display='none';}
 function onUserChange(){
@@ -832,8 +687,12 @@ async function syncFromSheet(){
 // Init
 function init(){
   updateUserDisplay();
+  // save URL ไว้ใน localStorage
+  localStorage.setItem('mt_url', SURL);
   if(SURL) loadPOData();
   else { buildSidebar(); selectUser('ALL'); }
+  // popup ชื่อถ้ายังไม่มี
+  if(!CU) setTimeout(()=>openSettings(), 800);
   setInterval(()=>{if(SURL&&RAW.length>0)syncFromSheet();},120000);
 }
 init();
